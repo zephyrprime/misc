@@ -32,7 +32,7 @@ WORKDIR $CAFFE_ROOT
 ENV CLONE_TAG=1.0
 
 RUN git clone -b ${CLONE_TAG} --depth 1 https://github.com/BVLC/caffe.git . 
-RUN pip install --upgrade pip 
+RUN echo pip install --upgrade pip 
 RUN cd python 
 RUN for req in $(cat requirements.txt) pydot; do pip install $req; done 
 RUN cd .. 
